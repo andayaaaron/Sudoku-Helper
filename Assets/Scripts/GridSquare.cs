@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GridSquare : MonoBehaviour
+public class GridSquare : Selectable
 {
     public GameObject number_text;
     private int number = 0;
@@ -31,5 +31,6 @@ public class GridSquare : MonoBehaviour
     public void SetNumber(int num)
     {
         number = num;
+        DisplayText();
     }
 }

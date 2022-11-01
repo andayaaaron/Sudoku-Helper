@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Grid : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Grid : MonoBehaviour
     public int rows = 0;
     public float all_sq_offset = 0.0f;
     public Vector2 start_position = new Vector2(0.0f, 0.0f);
+    public float sqscale = 1.0f;
 
     public GameObject grid_square;
 
@@ -41,6 +43,7 @@ public class Grid : MonoBehaviour
             {
                 grid_squares.Add(Instantiate(grid_square) as GameObject);
                 grid_squares[grid_squares.Count - 1].transform.parent = this.transform; //instantiate this game object as a child of the object holding this script
+                grid_squares[grid_squares.Count - 1].transform.localScale = new Vector3(sqscale, sqscale, sqscale);
             }
         }
     }
